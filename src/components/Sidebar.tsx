@@ -2,8 +2,13 @@ import React from "react";
 
 const Sidebar: React.FC = () => {
   return (
-    <aside className="w-64 h-screen bg-gray-50" aria-label="Sidebar">
-      <div className="overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800">
+    <aside className="w-64 h-screen bg-white" aria-label="Sidebar">
+      <div className="overflow-y-auto py-4 px-3 rounded dark:bg-gray-800">
+        <div className="flex items-center pl-2.5 mb-5">
+          <span className="self-center text-3xl font-semibold whitespace-nowrap dark:text-white">
+            Calnalyzer
+          </span>
+        </div>
         <ul className="space-y-2">
           <li>
             <a
