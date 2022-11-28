@@ -6,7 +6,7 @@ const Sidebar: React.FC = () => {
     <aside className="w-64 h-screen bg-white sticky top-0" aria-label="Sidebar">
       <div className="overflow-y-auto h-[100%] px-3 rounded dark:bg-gray-800">
         <div className="flex items-center pl-2.5 mb-5">
-          <span className="self-center text-3xl font-semibold whitespace-nowrap dark:text-white">
+          <span className="self-center text-3xl font-semibold whitespace-nowrap dark:text-white mt-6">
             Calnalyzer
           </span>
         </div>
