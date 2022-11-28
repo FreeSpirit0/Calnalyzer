@@ -19,3 +19,8 @@ export async function getForm() {
   const res = await axios.get("https://sheetdb.io/api/v1/cmqnl8n0lcadt");
   return res.data;
 }
+
+export async function getWorkOut() {
+  const res = await axios.get("https://sheetdb.io/api/v1/y1mg9a0h0od0a");
+  return res.data;
+}
