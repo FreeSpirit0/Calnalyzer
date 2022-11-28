@@ -17,12 +17,23 @@ const Workout = () => {
     <div className="flex bg-gray-50">
       <Sidebar />
       <Content>
-        <div>
+        <div className="grid grid-cols-6 gap-6">
           {Object.keys(workOut).map((key) => (
-            <div className="flex justify-around">
-              {workOut[key as keyof typeof workOut].Workout}
-              {workOut[key as keyof typeof workOut].Minute}
-              {workOut[key as keyof typeof workOut].CaloriesUsed}
+            <div className=" max-w-sm rounded overflow-hidden shadow-lg rounded-lg border border-lime-400">
+              <div className="px-8 py-4">
+                <div className="font-bold text-xl mb-2">
+                  <div>{workOut[key as keyof typeof workOut].Workout}</div>
+                </div>
+                <p className="text-gray-700 text-base">
+                  Workout Time: {workOut[key as keyof typeof workOut].Minute}{" "}
+                  minutes
+                  <div>
+                    Calories Burned:{" "}
+                    {workOut[key as keyof typeof workOut].CaloriesUsed} Kcal
+                  </div>
+                </p>
+              </div>
+              <div className="px-4 pt-4 pb-2"></div>
             </div>
           ))}
         </div>
