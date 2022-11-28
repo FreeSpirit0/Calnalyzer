@@ -2,10 +2,10 @@ import React from "react";
 import { MealPlan } from "../routes/Planner";
 import Card from "./Card";
 
-const MEAL = ['Breakfast', 'Lunch', 'Dinner']
+const MEAL = ["Breakfast", "Lunch", "Dinner"];
 
 const DayPlan = ({ day, meals, calories }: MealPlan) => {
-  const capitalize = (s: string) => s && s[0].toUpperCase() + s.slice(1);
+  const capitalize = (s: string) => s[0].toUpperCase() + s.slice(1);
 
   return (
     <div className="flex flex-col gap-4">

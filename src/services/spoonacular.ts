@@ -8,9 +8,10 @@ export async function getRandomFood() {
   return res.data;
 }
 
-export async function getMealPlan() {
+export async function getMealPlan(calories: number) {
   const res = await axios.get(
-    "https://api.spoonacular.com/mealplanner/generate?apiKey=915e7e7a090e42399090d19cb2358e42"
+    "https://api.spoonacular.com/mealplanner/generate?apiKey=260b7315e22d4e2894fb24041101545a",
+    { params: { targetCalories: calories } }
   );
   return res.data;
 }
