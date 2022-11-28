@@ -7,7 +7,7 @@ const App = () => {
 
 
   return (
-    <div className="bg-gray-50">
+    <div className="flex bg-gray-50">
       <Sidebar />
       <Content />
       

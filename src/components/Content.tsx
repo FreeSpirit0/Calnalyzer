@@ -6,55 +6,22 @@ import {
   ReactFragment,
   ReactPortal,
 } from "react";
-import {
-  getRandomFood,
-  getMealPlan,
-  getForm,
-} from "../services/spoonacular.js";
-
+import { getRandomFood } from "../services/spoonacular.js";
+import Card from "./Card";
 const Content = () => {
   const [randomFood, setRandomFood] = useState<any[]>([]);
-  const [mealPlan, setMealPlan] = useState<any>({});
-  const [formData, setFormData] = useState<any[]>([]);
 
   useEffect(() => {
-    getForm().then((allData) => {
-      allData.map((data: any) => {
-        formData.push(data);
-        console.log("pushed");
-      });
-      console.log(formData);
-      // console.log(formData[2]);
+    getRandomFood().then((data) => {
+      setRandomFood(data.recipes);
     });
   }, []);
-
-  // useEffect(() => {
-  //   getRandomFood().then((data) => {
-  //     setRandomFood(data.recipes);
-  //   });
-  // }, []);
-
-  // useEffect(() => {
-  //   getMealPlan().then((data) => {
-  //     setMealPlan(data);
-  //     console.log(mealPlan);
-  //   });
-  // }, []);
   return (
-    <div>
-      <div>
-        Content
-        {/* {randomFood.map((food) =>
-            food.extendedIngredients.map((extended: any) => (
-              <p>{extended.name}</p>
-            ))
-          )} */}
-      </div>
-
-      {/* <div>
-        Content
-        {mealPlan.week.monday.meals.map((meal: any) => meal.title)}
-      </div> */}
+    <div className="flex-1 flex-row height-100">
+      Content
+      {randomFood.map((food) =>
+        food.extendedIngredients.map((extended: any) => <Card name={extended.name}/>)
+      )}
     </div>
   );
 };
