@@ -22,29 +22,8 @@ export type MealPlan = {
   meals: Meal[];
   calories: number;
 };
-let cal = prompt("Enter you calories for your meal plan", "0");
-let calories = 0;
-if (cal) {
-  calories = parseInt(cal);
-}
-const Planner = () => {
-<<<<<<< HEAD
-  // const [mealPlan, setRandomFood] = useState<MealPlan[]>();
-  const [mealPlan, setMealPlan] = useState<MealPlan[]>();
 
-  useEffect(() => {
-    console.log(getMealPlan(2100));
-    getMealPlan(calories).then((data) => {
-      setMealPlan(
-        Object.keys(data.week).map((key) => ({
-          day: key,
-          meals: data.week[key as keyof typeof data.week].meals as Meal[],
-          calories: data.week[key as keyof typeof data.week].nutrients.calories,
-        }))
-      );
-    });
-  }, []);
-=======
+const Planner = () => {
   const [mealPlan, setMealPlan] = useState<MealPlan[]>();
   const [calorie, setCalorie] = useState<number>(0);
 
@@ -60,7 +39,6 @@ const Planner = () => {
       meals: data.week[key as keyof typeof data.week].meals as Meal[],
       calories: data.week[key as keyof typeof data.week].nutrients.calories,
     })))
->>>>>>> ef7a489 (Add calorie input)
 
   return (
     <div className="flex bg-gray-50">
