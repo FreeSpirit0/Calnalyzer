@@ -21,13 +21,11 @@ const DayPlan = ({ day, meals, calories }: MealPlan) => {
     for (const value of workOutCalorieList) {
       sum += Number(value);
     }
-    if (sum < calories) {
+    if (sum < calories / 3) {
       workOutCalorieList.push(
         workOut[key as keyof typeof workOut].CaloriesUsed
       );
       workOutList.push(workOut[key as keyof typeof workOut]);
-      console.log(workOutCalorieList);
-      console.log(workOutList);
     }
   });
 
