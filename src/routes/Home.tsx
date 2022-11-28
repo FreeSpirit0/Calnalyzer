@@ -4,6 +4,7 @@ import Content from "../components/Content";
 import Sidebar from "../components/Sidebar";
 import Chart from "../components/Chart";
 import { getForm } from "../services/spoonacular";
+import Navbar from "../components/Navbar";
 
 type CaloriesFoodRequest = {
   foodName: string;
@@ -44,24 +45,26 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="flex bg-gray-50">
-      <Sidebar />
-      <Content>
-        <div className="h-full w-full grid grid-cols-2 gap-10">
-          <div className="h-full w-full">
-            <Chart />
-          </div>
-          <div className="h-full w-full">
-            <Chart />
-          </div>
-          <div className="flex col-span-2 h-full w-full">
-            <div>
+    <>
+      <Navbar />
+      <div className="flex bg-gray-50">
+        <Content>
+          <div className="h-full w-full grid grid-cols-2 gap-10">
+            <div className="h-full w-full">
               <Chart />
             </div>
+            <div className="h-full w-full">
+              <Chart />
+            </div>
+            <div className="flex col-span-2 h-full w-full">
+              <div>
+                <Chart />
+              </div>
+            </div>
           </div>
-        </div>
-      </Content>
-    </div>
+        </Content>
+      </div>
+    </>
   );
 };
 
