@@ -8,6 +8,7 @@ import Content from "./components/Content";
 import Chart from "./components/Chart";
 import Home from "./routes/Home";
 import Planner from "./routes/Planner";
+import Workout from "./routes/Workout";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/plan",
     element: <Planner />
+  },
+  {
+    path: "/workout",
+    element: <Workout />
   }
 ]);
 
