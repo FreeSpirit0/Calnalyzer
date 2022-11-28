@@ -46,7 +46,7 @@ const Planner = () => {
   return (
     <>
       <Navbar />
-      <div className="flex bg-gray-50">
+      <div className="flex">
         <Content>
           <div>
             <span className="text-l">

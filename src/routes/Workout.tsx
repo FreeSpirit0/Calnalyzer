@@ -16,7 +16,7 @@ const Workout = () => {
   return (
     <>
       <Navbar />
-      <div className="flex bg-gray-50">
+      <div className="flex">
         <Content>
           <div className="grid grid-cols-6 gap-4">
             {Object.keys(workOut).map((key) => (

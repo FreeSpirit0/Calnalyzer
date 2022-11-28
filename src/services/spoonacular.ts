@@ -8,6 +8,20 @@ export async function getRandomFood() {
   return res.data;
 }
 
+export async function getMenuItems(searchTerm: string) {
+  const res = await axios.get(
+    `https://api.spoonacular.com/food/menuItems/search?apiKey=787ebf04276c47d781e1e76c972ff881&query=${searchTerm}&number=1`
+  );
+  return res.data
+}
+
+export async function getMenuInfo(menuId: number) {
+  const res = await axios.get(
+    `https://api.spoonacular.com/food/menuItems/${menuId}?apiKey=787ebf04276c47d781e1e76c972ff881`
+  )
+  return res.data
+};
+
 export async function getMealPlan(calorie: number) {
   const res = await axios.get(
     `https://api.spoonacular.com/mealplanner/generate?apiKey=787ebf04276c47d781e1e76c972ff881&targetCalories=${calorie}`
@@ -16,7 +30,7 @@ export async function getMealPlan(calorie: number) {
 }
 
 export async function getForm() {
-  const res = await axios.get("https://sheetdb.io/api/v1/cmqnl8n0lcadt");
+  const res = await axios.get("https://sheetdb.io/api/v1/s7jk47tddgo32");
   return res.data;
 }
 

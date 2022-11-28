@@ -10,7 +10,7 @@ import { getRandomFood } from "../services/spoonacular.js";
 import Card from "./Card";
 const Content = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex-1 height-100 m-10">
+    <div className="height-100 m-10">
       {children}
     </div>
   );
