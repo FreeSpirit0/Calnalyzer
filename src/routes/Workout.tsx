@@ -17,7 +17,7 @@ const Workout = () => {
     <div className="flex bg-gray-50">
       <Sidebar />
       <Content>
-        <div className="grid grid-cols-6 gap-6">
+        <div className="grid grid-cols-6 gap-4">
           {Object.keys(workOut).map((key) => (
             <div className=" max-w-sm rounded overflow-hidden shadow-lg rounded-lg border border-lime-400">
               <div className="px-8 py-4">
