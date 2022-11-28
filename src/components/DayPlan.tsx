@@ -40,28 +40,33 @@ const DayPlan = ({ day, meals, calories }: MealPlan) => {
           <Card name={m.title} meal={MEAL[i]} />
         ))}
         <div>
-          List of All WorkOut that should be done
-          {Object.keys(workOutList).map((key) => (
-            <div className=" max-w-sm rounded overflow-hidden shadow-lg rounded-lg border border-lime-400">
-              <div className="px-8 py-4">
-                <div className="font-bold text-xl mb-2">
-                  <div>
-                    {workOutList[key as keyof typeof workOutList].Workout}
+          <div className="text-[2rem] font-bold">
+            List of All Work Out that should be done
+            {Object.keys(workOutList).map((key) => (
+              <div className=" max-w-sm rounded  overflow-hidden shadow-lg rounded-lg border border-lime-400">
+                <div className="px-8 py-4 ">
+                  <div className="font-bold text-xl mb-2">
+                    <div>
+                      {workOutList[key as keyof typeof workOutList].Workout}
+                    </div>
                   </div>
+                  <p className="text-gray-700 text-base">
+                    Workout Time:{" "}
+                    {workOutList[key as keyof typeof workOutList].Minute}{" "}
+                    minutes
+                    <div>
+                      Calories Burned:{" "}
+                      {
+                        workOutList[key as keyof typeof workOutList]
+                          .CaloriesUsed
+                      }{" "}
+                      Kcal
+                    </div>
+                  </p>
                 </div>
-                <p className="text-gray-700 text-base">
-                  Workout Time:{" "}
-                  {workOutList[key as keyof typeof workOutList].Minute} minutes
-                  <div>
-                    Calories Burned:{" "}
-                    {workOutList[key as keyof typeof workOutList].CaloriesUsed}{" "}
-                    Kcal
-                  </div>
-                </p>
               </div>
-              <div className="px-4 pt-4 pb-2"></div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
