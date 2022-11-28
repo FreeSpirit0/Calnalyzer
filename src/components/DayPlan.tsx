@@ -31,7 +31,7 @@ const DayPlan = ({ day, meals, calories }: MealPlan) => {
 
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="text-xl font-bold underline">{capitalize(day)}</h1>
+      <h1 className="text-xl font-bold underline mt-4">{capitalize(day)}</h1>
       <h2 className="text-l">Total calories: {calories}</h2>
       <div className="flex flex-row gap-4">
         {meals.map((m, i) => (

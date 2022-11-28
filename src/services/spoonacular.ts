@@ -10,21 +10,21 @@ export async function getRandomFood() {
 
 export async function getMenuItems(searchTerm: string) {
   const res = await axios.get(
-    `https://api.spoonacular.com/food/menuItems/search?apiKey=787ebf04276c47d781e1e76c972ff881&query=${searchTerm}&number=1`
+    `https://api.spoonacular.com/food/menuItems/search?apiKey=15d54d816d3b4197b5cccc6d4f21f343&query=${searchTerm}&number=1`
   );
   return res.data
 }
 
 export async function getMenuInfo(menuId: number) {
   const res = await axios.get(
-    `https://api.spoonacular.com/food/menuItems/${menuId}?apiKey=787ebf04276c47d781e1e76c972ff881`
+    `https://api.spoonacular.com/food/menuItems/${menuId}?apiKey=15d54d816d3b4197b5cccc6d4f21f343`
   )
   return res.data
 };
 
 export async function getMealPlan(calorie: number) {
   const res = await axios.get(
-    `https://api.spoonacular.com/mealplanner/generate?apiKey=787ebf04276c47d781e1e76c972ff881&targetCalories=${calorie}`
+    `https://api.spoonacular.com/mealplanner/generate?apiKey=15d54d816d3b4197b5cccc6d4f21f343&targetCalories=${calorie}`
   );
   return res.data;
 }

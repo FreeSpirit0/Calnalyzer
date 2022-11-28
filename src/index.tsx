@@ -5,7 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Content from "./components/Content";
-import Chart from "./components/Chart";
+import AgeChart from "./components/AgeChart";
 import Home from "./routes/Home";
 import Planner from "./routes/Planner";
 import Workout from "./routes/Workout";

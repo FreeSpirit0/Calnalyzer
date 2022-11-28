@@ -65,7 +65,7 @@ const Planner = () => {
               </button>
             </span>
           </div>
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-8 divide-y-2">
             {mealPlan ? (
               mealPlan.map((m) => (
                 <DayPlan day={m.day} meals={m.meals} calories={m.calories} />
