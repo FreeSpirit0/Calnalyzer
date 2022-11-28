@@ -33,41 +33,37 @@ const DayPlan = ({ day, meals, calories }: MealPlan) => {
 
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="text-xl text-bold underline">{capitalize(day)}</h1>
+      <h1 className="text-xl font-bold underline">{capitalize(day)}</h1>
       <h2 className="text-l">Total calories: {calories}</h2>
       <div className="flex flex-row gap-4">
         {meals.map((m, i) => (
           <Card name={m.title} meal={MEAL[i]} />
         ))}
-        <div>
-          <div className="text-[2rem] font-bold">
-            List of All Work Out that should be done
-            {Object.keys(workOutList).map((key) => (
-              <div className=" max-w-sm rounded  overflow-hidden shadow-lg rounded-lg border border-lime-400">
-                <div className="px-8 py-4 ">
-                  <div className="font-bold text-xl mb-2">
-                    <div>
-                      {workOutList[key as keyof typeof workOutList].Workout}
-                    </div>
-                  </div>
-                  <p className="text-gray-700 text-base">
-                    Workout Time:{" "}
-                    {workOutList[key as keyof typeof workOutList].Minute}{" "}
-                    minutes
-                    <div>
-                      Calories Burned:{" "}
-                      {
-                        workOutList[key as keyof typeof workOutList]
-                          .CaloriesUsed
-                      }{" "}
-                      Kcal
-                    </div>
-                  </p>
+      </div>
+      <h2 className="text-l font-bold">
+        List of All Work Out that should be done
+      </h2>
+      <div className="flex flex-row gap-4 flex-wrap text-[2rem] font-bold">
+        {Object.keys(workOutList).map((key) => (
+          <div className=" max-w-sm rounded  overflow-hidden shadow-lg rounded-lg border border-emerald-400 hover:border-emerald-600">
+            <div className="px-8 py-4 ">
+              <div className="font-bold text-xl mb-2">
+                <div>
+                  {workOutList[key as keyof typeof workOutList].Workout}
                 </div>
               </div>
-            ))}
+              <p className="text-gray-700 text-base">
+                Workout Time:{" "}
+                {workOutList[key as keyof typeof workOutList].Minute} minutes
+                <div>
+                  Calories Burned:{" "}
+                  {workOutList[key as keyof typeof workOutList].CaloriesUsed}{" "}
+                  Kcal
+                </div>
+              </p>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );
