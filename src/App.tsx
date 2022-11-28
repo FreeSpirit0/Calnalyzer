@@ -8,9 +8,7 @@ const App = () => {
 
   return (
     <div className="flex bg-gray-50">
-      <Sidebar />
-      <Content />
-      
+      <Sidebar />      
     </div>
   );
 };
