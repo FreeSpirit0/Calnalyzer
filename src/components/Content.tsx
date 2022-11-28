@@ -12,9 +12,9 @@ const Content = () => {
   const [randomFood, setRandomFood] = useState<any[]>([]);
 
   useEffect(() => {
-    getRandomFood().then((data) => {
-      setRandomFood(data.recipes);
-    });
+    // getRandomFood().then((data) => {
+    //   setRandomFood(data.recipes);
+    // });
   }, []);
   return (
     <div className="flex-1 flex-row height-100">
