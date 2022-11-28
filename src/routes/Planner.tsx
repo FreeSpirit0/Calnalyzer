@@ -2,27 +2,48 @@ import React, { useState, useEffect } from "react";
 import "../App.css";
 import Card from "../components/Card";
 import Content from "../components/Content";
+import DayPlan from "../components/DayPlan";
 import Sidebar from "../components/Sidebar";
+import { mock } from "../mock";
+
+type Plan = typeof mock;
+type WeekPlan = typeof mock.week;
+type Meal = {
+  id: number;
+  imageType: string;
+  title: string;
+  readyInMinutes: number;
+  servings: number;
+  sourceUrl: string;
+};
+export type MealPlan = {
+  day: string;
+  meals: Meal[];
+};
 
 const Planner = () => {
-  const [randomFood, setRandomFood] = useState<any[]>([]);
+  const [mealPlan, setRandomFood] = useState<MealPlan[]>();
 
   useEffect(() => {
     // getRandomFood().then((data) => {
     //   setRandomFood(data.recipes);
     // });
+    setRandomFood(
+      Object.keys(mock.week).map((key) => ({
+        day: key,
+        meals: mock.week[key as keyof typeof mock.week].meals as Meal[],
+      }))
+    );
   }, []);
 
   return (
     <div className="flex bg-gray-50">
       <Sidebar />
       <Content>
-        Content
-        {randomFood.map((food) =>
-          food.extendedIngredients.map((extended: any) => (
-            <Card name={extended.name} />
-          ))
-        )}
+        <div className="flex flex-col gap-8">
+          {mealPlan ? (
+            mealPlan.map((m) => <DayPlan day={m.day} meals={m.meals} />)) : <></>}
+        </div>
       </Content>
     </div>
   );
