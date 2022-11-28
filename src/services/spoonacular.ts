@@ -21,6 +21,6 @@ export async function getForm() {
 }
 
 export async function getWorkOut() {
-  const res = await axios.get("https://sheetdb.io/api/v1/y1mg9a0h0od0a");
+  const res = await axios.get("https://sheetdb.io/api/v1/p2vz2vuhd6wf5");
   return res.data;
 }

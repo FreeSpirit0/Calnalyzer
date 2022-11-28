@@ -9,7 +9,6 @@ const Workout = () => {
   useEffect(() => {
     getWorkOut().then((w) => {
       setWorkOut(w);
-      // console.log(w);
       console.log(workOut);
     });
   }, []);
