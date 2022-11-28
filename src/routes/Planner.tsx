@@ -19,6 +19,7 @@ type Meal = {
 export type MealPlan = {
   day: string;
   meals: Meal[];
+  calories: number;
 };
 
 const Planner = () => {
@@ -32,6 +33,7 @@ const Planner = () => {
       Object.keys(mock.week).map((key) => ({
         day: key,
         meals: mock.week[key as keyof typeof mock.week].meals as Meal[],
+        calories: mock.week[key as keyof typeof mock.week].nutrients.calories
       }))
     );
   }, []);
@@ -42,7 +44,7 @@ const Planner = () => {
       <Content>
         <div className="flex flex-col gap-8">
           {mealPlan ? (
-            mealPlan.map((m) => <DayPlan day={m.day} meals={m.meals} />)) : <></>}
+            mealPlan.map((m) => <DayPlan day={m.day} meals={m.meals} calories={m.calories} />)) : <></>}
         </div>
       </Content>
     </div>
