@@ -529,6 +529,14 @@ export const caloriesMock = [
   {
     age: 20,
     calorie: 1800
+  },
+  {
+    age: 25,
+    calorie: 1675
+  },
+  {
+    age: 40,
+    calorie: 1500
   }
 ];
 

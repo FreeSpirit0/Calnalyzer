@@ -48,31 +48,33 @@ const Planner = () => {
       <Navbar />
       <div className="flex">
         <Content>
-          <div>
-            <span className="text-l">
-              Enter Calories:{" "}
-              <input
-                type="number"
-                className="border rounded-md h-8 mb-4 ml-4"
-                onChange={(e) => setCalorie(e.target.valueAsNumber)}
-                value={calorie}
-              ></input>{" "}
-              <button
-                className="ml-4 border rounded-full py-2 px-4 bg-emerald-500 text-white"
-                onClick={handleOnClick}
-              >
-                Find Meal
-              </button>
-            </span>
-          </div>
-          <div className="flex flex-col gap-8 divide-y-2">
-            {mealPlan ? (
-              mealPlan.map((m) => (
-                <DayPlan day={m.day} meals={m.meals} calories={m.calories} />
-              ))
-            ) : (
-              <></>
-            )}
+          <div className="flex flex-col">
+            <div>
+              <span className="text-l">
+                Enter Calories:{" "}
+                <input
+                  type="number"
+                  className="border rounded-md h-8 mb-4 ml-4 p-4"
+                  onChange={(e) => setCalorie(e.target.valueAsNumber)}
+                  value={calorie}
+                ></input>{" "}
+                <button
+                  className="ml-4 border rounded-full py-2 px-4 bg-emerald-500 text-white"
+                  onClick={handleOnClick}
+                >
+                  Find Meal
+                </button>
+              </span>
+            </div>
+            <div className="flex flex-col gap-8 divide-y-2">
+              {mealPlan ? (
+                mealPlan.map((m) => (
+                  <DayPlan day={m.day} meals={m.meals} calories={m.calories} />
+                ))
+              ) : (
+                <></>
+              )}
+            </div>
           </div>
         </Content>
       </div>

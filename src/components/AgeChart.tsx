@@ -42,7 +42,7 @@ const AgeChart = ({ formData }: { formData: AgeCalorie[] }) => {
       {
         label: "Dataset 1",
         data: formData.map(data => data.calorie),
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        backgroundColor: ["rgba(255, 99, 132, 0.5)", "rgba(100, 99, 132, 0.5)"],
       },
     ],
   };

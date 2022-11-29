@@ -42,7 +42,7 @@ const GenderChart = ({ formData }: { formData: GenderCalorie[] }) => {
       {
         label: "Dataset 1",
         data: formData.map(data => data.calorie),
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        backgroundColor: ["rgba(0, 91, 217, 0.8)", "rgba(255, 99, 132, 0.8)"],
       },
     ],
   };
